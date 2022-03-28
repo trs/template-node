@@ -35,7 +35,13 @@
   "jest": {
     "transform": {
       "^.+\\.(t|j)sx?$": "@swc/jest"
-    }
+    },
+    "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/src/$1"
+    },
+    "testMatch": [
+      "<rootDir>/src/**/*.test.ts"
+    ]
   },
   "nodemonConfig": {
     "watch": [
