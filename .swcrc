@@ -9,7 +9,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "exclude": ".*.test.ts$",
   "module": {
     "type": "commonjs"
   },

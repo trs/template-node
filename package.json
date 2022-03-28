@@ -7,7 +7,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon",
-    "build": "swc ./src -d dist",
+    "build": "swc ./src -d dist --ignore **/*.test.js",
     "types": "tsc --emitDeclarationOnly",
     "test": "jest"
   },
