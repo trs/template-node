@@ -1,6 +1,6 @@
 {
   "jsc": {
-    "target": "es2020",
+    "target": "es2021",
     "parser": {
       "syntax": "typescript"
     },
@@ -10,7 +10,7 @@
     }
   },
   "module": {
-    "type": "commonjs"
+    "type": "es6"
   },
   "env": {
     "targets": {
