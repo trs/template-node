@@ -1,8 +1,8 @@
 {
   "name": "template-node",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "type": "module",
   "license": "MIT",
   "scripts": {
@@ -12,30 +12,29 @@
     "build": "swc ./src -d dist --ignore **/*.test.js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:prod": "run-p build build:types",
-    "start": "node dist/index.js",
     "lint": "xo src/**/*.ts --fix",
     "lint:check": "xo src/**/*.ts",
     "test": "jest"
   },
   "dependencies": {},
   "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
     "@swc/cli": "^0.1.57",
-    "@swc/core": "^1.2.183",
+    "@swc/core": "^1.2.203",
     "@swc/jest": "^0.2.21",
-    "@types/jest": "^27.5.1",
-    "@types/node": "^17.0.33",
-    "husky": "^7.0.4",
-    "jest": "^27.5.1",
-    "lint-staged": "12.3.8",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^17.0.43",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "lint-staged": "13.0.1",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "ts-node": "^10.4.0",
-    "tsconfig-paths": "^3.12.0",
-    "typescript": "^4.6.4",
-    "xo": "^0.48.0"
+    "ts-node": "^10.8.1",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.7.3",
+    "xo": "^0.50.0"
   },
   "commitlint": {
     "extends": [
@@ -62,7 +61,7 @@
     "env": "node"
   },
   "lint-staged": {
-    "*": "xo --fix"
+    "*.{ts,json}": "xo --fix"
   },
   "nodemonConfig": {
     "watch": [
@@ -72,10 +71,10 @@
     "ignore": [
       "**/*.test.ts"
     ],
-    "exec": "yarn ts-node ./src/index.ts"
+    "exec": "node --inspect --loader ./loader.js ./src/main.ts"
   },
   "volta": {
-    "node": "16.14.2",
-    "yarn": "1.22.18"
+    "node": "16.15.1",
+    "yarn": "1.22.19"
   }
 }

@@ -2,20 +2,25 @@
   "include": ["./src/**/*.ts"],
   "compilerOptions": {
     "lib": ["ES2021"],
-    "outDir": "./dist/types",
     "module": "ES2022",
     "moduleResolution": "Node",
     "declaration": true,
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
-    "baseUrl": "./",
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
   },
   "ts-node": {
-    "require": ["tsconfig-paths/register"],
+    "require": [
+      "tsconfig-paths/register"
+    ],
     "transpileOnly": true,
-    "transpiler": "ts-node/transpilers/swc-experimental"
+    "swc": true,
+    "esm": true
   }
 }
